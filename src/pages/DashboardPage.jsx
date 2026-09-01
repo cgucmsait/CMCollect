@@ -364,6 +364,12 @@ export default function DashboardPage({ user, handleLogout, showToast }) {
               <img 
                 src={logoImg} 
                 alt="CMCollect Logo" 
+                onError={(e) => {
+                  if (!e.target.dataset.tried) {
+                    e.target.dataset.tried = 'true';
+                    e.target.src = `${import.meta.env.BASE_URL}logo.png`;
+                  }
+                }}
                 style={{ width: '42px', height: '42px', flexShrink: 0, objectFit: 'contain' }} 
               />
               <span className="header-logo-text">CMCollect</span>
@@ -412,6 +418,12 @@ export default function DashboardPage({ user, handleLogout, showToast }) {
             <img 
               src={logoImg} 
               alt="CMCollect Logo" 
+              onError={(e) => {
+                if (!e.target.dataset.tried) {
+                  e.target.dataset.tried = 'true';
+                  e.target.src = `${import.meta.env.BASE_URL}logo.png`;
+                }
+              }}
               style={{ width: '42px', height: '42px', flexShrink: 0, objectFit: 'contain' }} 
             />
             <span className="header-logo-text">CMCollect</span>

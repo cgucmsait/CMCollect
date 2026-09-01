@@ -72,6 +72,12 @@ export default function LoginPage({ setUser, showToast }) {
           <img 
             src={logoImg} 
             alt="CMCollect Logo" 
+            onError={(e) => {
+              if (!e.target.dataset.tried) {
+                e.target.dataset.tried = 'true';
+                e.target.src = `${import.meta.env.BASE_URL}logo.png`;
+              }
+            }}
             style={{ width: '76px', height: '76px', margin: '0 auto 14px auto', display: 'block', objectFit: 'contain' }} 
           />
           <h1 className="text-3xl font-bold serif-title mb-2">CMCollect</h1>
