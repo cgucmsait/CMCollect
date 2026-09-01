@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Reference templates and design assets (不上傳 GitHub)
+Scroll_bar.html
+picture_display.html
+style_reference.png
+
+# Logo 製作腳本與中介來源圖檔 (不上傳 GitHub)
+*.py
+favicon.jpg
+favicon_rbg.png
+public/favicon_*_*.png
+public/favicon_cropped*.png
+public/favicon_rounded.png
+public/favicon_cutout.png
+public/favicon_pure_transparent.png
+public/favicon_flawless.png
+public/favicon_perfect_cutout.png
+public/favicon_vector_cutout.png
+public/favicon_ultimate.png
+public/favicon_rbg_transparent.png

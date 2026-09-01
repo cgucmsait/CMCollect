@@ -1,0 +1,41 @@
+name: Deploy CMCollect to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# 設定 GitHub Token 權限以允許推送至 gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      # 從 GitHub Secrets 注入環境變數並生成 .env
+      - name: Inject Environment Variables
+        run: |
+          echo "VITE_GAS_API_URL=${{ secrets.VITE_GAS_API_URL }}" > .env
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
