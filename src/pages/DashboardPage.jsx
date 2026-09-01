@@ -8,6 +8,7 @@ import {
 import { callApi } from '../utils/api';
 import { getIntroductionHtml, getPictureDisplayHtml } from '../utils/templates';
 import CustomModal from '../components/CustomModal';
+import logoImg from '../assets/logo.png';
 
 function formatToStandardDate(val) {
   if (!val) return '';
@@ -360,8 +361,13 @@ export default function DashboardPage({ user, handleLogout, showToast }) {
         <header className="app-header">
           <div className="header-container">
             <div className="header-logo-area">
+              <img 
+                src={logoImg} 
+                alt="CMCollect Logo" 
+                style={{ width: '42px', height: '42px', flexShrink: 0, objectFit: 'contain' }} 
+              />
               <span className="header-logo-text">CMCollect</span>
-              <span className="header-system-tag">活動收集系統</span>
+              <span className="header-system-tag">活動資料蒐集系統</span>
             </div>
             <div className="user-controls">
               <div className="user-badge">
@@ -404,7 +410,7 @@ export default function DashboardPage({ user, handleLogout, showToast }) {
         <div className="header-container">
           <div className="header-logo-area">
             <img 
-              src="/logo.png" 
+              src={logoImg} 
               alt="CMCollect Logo" 
               style={{ width: '42px', height: '42px', flexShrink: 0, objectFit: 'contain' }} 
             />

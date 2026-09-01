@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Shield, Loader2, Eye, EyeOff } from 'lucide-react';
 import { callApi } from '../utils/api';
+import logoImg from '../assets/logo.png';
 
 export default function LoginPage({ setUser, showToast }) {
   const [username, setUsername] = useState('');
@@ -69,7 +70,7 @@ export default function LoginPage({ setUser, showToast }) {
 
         <div className="text-center">
           <img 
-            src="/logo.png" 
+            src={logoImg} 
             alt="CMCollect Logo" 
             style={{ width: '76px', height: '76px', margin: '0 auto 14px auto', display: 'block', objectFit: 'contain' }} 
           />
